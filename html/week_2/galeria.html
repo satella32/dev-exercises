@@ -5,53 +5,71 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,300..800;1,300..800&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Roboto:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css">
     <title>Galeria de Imagens</title>
     <style>
         html, body {
             margin:0;
-            background-color: rgb(221, 221, 221);
-            padding:20px;
-            justify-content: center;
+            padding: 0;
+            width: 100%;
+            height: 100%;
+            overflow: auto;
+            display: flex;
+            background-color: rgba(221, 221, 221, 0.5);
+            color:rgb(53, 53, 53);
             font-family: "Poppins", sans-serif;
+            font-size:16px;
+
+        }
+        
+        .page {
+            margin: auto;
+            background-color: white;
+            width:fit-content;
+            padding:30px;
+            padding-top: 10px;
+            box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2); 
+            border-radius:5px;
+
         }
 
         img {
             margin-left: 0px;
-            margin-right:20px;
+            margin-right: 20px;
+            margin-bottom:20px;
             border-radius: 12px;
-        }
-
-        .page {
-            margin:auto;
-            background-color: white;
-            width:70%;
-            padding:30px;
-            box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2); 
-            border-radius:5px;
+            box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+             
         }
 
         table {
-            width: 100%;
-            border-collapse: collapse;    
+            width: 1000px;
+            border-collapse: separate;
+            border-spacing: 0;
+            box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+            border-radius: 7px;
+            overflow: hidden;
         }
 
         th {
-            background-color: black;
+            background-color: rgb(53, 53, 53);
             color: white;
+
         }
 
         th, td {
-            border-bottom: 1px solid black;
-            padding: 8px;
+            text-align: left;
+            border-bottom: 1px solid rgba(0, 0, 0, 0.2);
+            padding: 10px;
+            
         }
     </style>
 </head>
 <body>
     <div class="page">
-        <h1><i class="fa fa-image"></i> Galeria de Imagens</h1>
-        <p>Abaixo estão três imagens de exemplos aleatórios:</p>
+        <h1><i class="fa-solid fa-images"></i> Galeria de Imagens</h1>
+        <p style="font-size:18px;">Abaixo estão três imagens de exemplos aleatórios:</p>
         <div class="images">
             <img src="https://placehold.co/150x150" alt="placeholder" width="150" height="150">
             <img src="https://placehold.co/150x150" alt="placeholder" width="150" height="150">
@@ -71,7 +89,7 @@
                 <td>R$ 3.000,00</td>
                 <td>Em estoque</td>
             </tr>
-            <tr style="background-color: rgb(185, 185, 185);">
+            <tr style="background-color: rgba(145, 145, 145, 0.2);">
                 <td>Teclado</td>
                 <td>R$ 100,00</td>
                 <td>Fora de estoque</td>
