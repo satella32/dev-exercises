@@ -3,51 +3,142 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css">
     <title>Cadastro</title>
+    <style>
+        html, body {
+            margin:0;
+            padding:0;
+            width: 100%;
+            height: 100%;
+            overflow: auto;
+            display: flex;
+            background-color: rgba(221, 221, 221, 0.5);
+            color: #353535;
+            font-family: "Poppins", sans-serif;
+            font-weight: 500;
+            font-size: 15px
+
+        }
+        
+        .page {
+            margin: auto;
+            padding: 30px;
+            
+            box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.1);
+            border-radius: 5px;
+            background-color: white;
+            
+        }
+
+        h1 {
+            font-weight: inherit;
+            font-size: 30px;
+            margin: 0;
+            margin-bottom: 10px;
+
+        }
+
+        :placeholder-shown {
+            font-family:inherit;
+            
+        }
+
+        #name, #email, #password {
+            width: 500px;
+            padding: 10px;
+            border-radius: 5px;
+            border-color:rgba(163, 163, 163, 0.2);
+            margin-bottom: 10px;
+
+        }
+
+        #countries {
+            width: 100%;
+            padding: 10px;
+            border-radius: 5px;
+            background-color: rgba(180, 180, 180, 0.2);
+            border-color:rgba(163, 163, 163, 0.5);
+            font-family: inherit;
+
+        }
+
+        #about {
+            width: 100%;
+            max-width: 500px;
+            height: 80px;
+            max-height: 80px;
+            padding: 10px;
+            border-radius: 5px;
+            border-color:rgba(163, 163, 163, 0.5);
+            margin-bottom:10px;
+            
+        }
+
+        #submit {
+            width: 100%;
+            padding: 10px;
+            margin-bottom: 20px;
+            border-radius: 5px;
+            background-color: #00BF55;
+            border:0;
+            color: white;
+            font-family:inherit;
+            cursor: pointer;
+
+        }
+
+    </style>
 </head>
 <body>
-    <h1>Cadastro de Usuário</h1>
+    <div class="page">
+        <center><h1><i class="fa-solid fa-user"></i> Cadastro de Usuário</h1></center>
 
-    <form>
-        <label for="nome">Nome:</label><br>
-        <input type="text" id="name" name="name" placeholder="Digite seu nome"><br><br>
-        <label for="email">E-mail:</label><br>
-        <input type="email" id="email" name="email" placeholder="Digite seu e-mail"><br><br>
-        <label for="senha">Senha:</label><br>
-        <input type="password" id="password" name="password" placeholder="Digite sua senha"><br><br>
+        <form>
+            <label for="nome"><i class="fa-solid fa-signature"></i> Nome</label><br>
+            <input type="text" id="name" name="name" placeholder="Digite seu nome"><br>
+            <label for="email"><i class="fa-solid fa-envelope"></i> E-mail</label><br>
+            <input type="email" id="email" name="email" placeholder="Digite seu e-mail"><br>
+            <label for="senha"><i class="fa-solid fa-lock"></i> Senha</label><br>
+            <input type="password" id="password" name="password" placeholder="Digite sua senha"><br>
+            
+            Gênero<br>
+            <input type="radio" id="male" name="gender" value="M">
+            <label for="male">Masculino</label>
+            <input type="radio" id="female" name="gender" value="F">
+            <label for="female">Feminino</label>
+            <input type="radio" id="other" name="gender" value="Other">
+            <label for="other">Outro</label><br><br>
 
-        Gênero:<br>
-        <input type="radio" id="male" name="gender" value="M">
-        <label for="male">Masculino</label><br>
-        <input type="radio" id="female" name="gender" value="F">
-        <label for="female">Feminino</label><br>
-        <input type="radio" id="other" name="gender" value="Other">
-        <label for="other">Outro</label><br>
-        <br>
-        Linguagens de Programação que você conhece:<br>
-        <input type="checkbox" id="option1" name="option1" value="html">
-        <label for="option1">HTML</label><br>
-        <input type="checkbox" id="option2" name="option2" value="css">
-        <label for="option2">CSS</label><br>
-        <input type="checkbox" id="option3" name="option3" value="javascript">
-        <label for="option3">JavaScript</label><br>
-        <br>
-        <label for="countries">Selecione seu país:</label><br>
-        <select name="countries" id="countries">
-            <option value="brasil">Angola</option>
-            <option value="brasil">Arábia Saudita</option>
-            <option value="brasil">Brasil</option>
-            <option value="brasil">Israel</option>
-            <option value="brasil">Nigéria</option>
-        </select>
-        <br><br>
+            Linguagens de Programação<br>
+            <input type="checkbox" id="option1" name="option1" value="html">
+            <label for="option1">HTML</label>
+            <input type="checkbox" id="option2" name="option2" value="css">
+            <label for="option2">CSS</label>
+            <input type="checkbox" id="option3" name="option3" value="javascript">
+            <label for="option3">JavaScript</label><br>
+            <br>
+            <label for="countries"><i class="fa-solid fa-globe"></i> Selecione seu país</label><br>
+            <select name="countries" id="countries">
+                <option value="brasil">Angola</option>
+                <option value="brasil">Arábia Saudita</option>
+                <option value="brasil">Brasil</option>
+                <option value="brasil">Israel</option>
+                <option value="brasil">Nigéria</option>
+            </select>
+            <br><br>
 
-        <label for="about">Fale um pouco sobre você:</label><br>
-        <textarea id="about" name="about" rows="4" cols="50"></textarea>
-        
-        <br><br>
-        
-        <input type="submit" value="Enviar">
-    </form>
+            <label for="about"><i class="fa-solid fa-comment"></i> Sobre você</label><br>
+            <textarea id="about" name="about" rows="4" cols="50" placeholder="Fale um pouco sobre você"></textarea>
+            
+            <br>
+            <button type="submit" id="submit">
+                <i class="fa-solid fa-paper-plane"></i> Enviar    
+            </button>
+        </form>
+    </div>
 </body>
 </html>
