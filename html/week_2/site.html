@@ -3,33 +3,95 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css">
     <title>Meu site</title>
+    <style>
+        html, body {
+            margin: 0;
+            padding: 0;
+            width: 100%;
+            height: 100%;
+            overflow: auto;
+            color: rgb(53, 53, 53);
+            font-family: "Poppins", sans-serif;
+            font-size: 14px;
+     
+        }
+
+        .header {
+            background-color: #00BF55;
+            color: white;
+            padding: 10px 20px;
+
+        }
+
+        .page, .footer {
+            width: 37%;
+            margin: auto;
+            padding: 20px;
+            background-color: white;    
+            
+        }
+
+        #contato {
+            color: #00BF55;
+        }
+        
+        h1, h2, h3 {
+            font-weight: 500;
+        }
+
+        hr {
+            height: 1px;
+            border: none;
+            background-color: rgba(0, 0, 0, 0.2);
+        }
+
+       ul, ol {
+            padding-left: 20px;
+            
+        } 
+
+        a {
+            color: #00BF55;
+            text-decoration: none;
+        }
+        
+    </style>
 </head>
 <body>
-    <h1>Bem-vindo ao Meu site</h1>
-    <p>Este é um breve texto de introdução. Use as tags HTML de forma adequada para organizar seu conteúdo</p>
-    <h2>Minha História</h2>
-    <p>Nasci em uma pequena cidade e sempre tive interesse por tecnologia. Fui estudar programação e, desde então, venho aprendendo cada vez mais sobre a área.</p>
-    <h3>Hobbies</h3>
-    <ul>
-        <li>Ler livros de ficção</li>
-        <li>Caminhar em parques</li>
-        <li>Estudar novas linguagens de programação</li>
-    </ul>
-    <h4>Planos Futuros</h4>
-    <ol>
-        <li>Terminar meu curso de programação</li>
-        <li>Aprimorar minhas habilidades em HTML, CSS e JavaScript</li>
-        <li>Aprender sobre frameworks de desenvolvimento web</li>
-    </ol>
+    <div class="header">
+        <h1 style="font-size: 22px"><i class="fa-solid fa-home"></i> Bem-vindo ao Meu site</h1>
+        <p>Este é um breve texto de introdução. Use as tags HTML de forma adequada para organizar seu conteúdo</p>
+    </div>
+    <div class="page">
+        <h2>Minha História</h2>
+        <p>Nasci em uma pequena cidade e sempre tive interesse por tecnologia. Fui estudar programação e, desde então, venho aprendendo cada vez mais sobre a área.</p>
+        <h3>Hobbies</h3>
+        <ul>
+            <li>Ler livros de ficção</li>
+            <li>Caminhar em parques</li>
+            <li>Estudar novas linguagens de programação</li>
+        </ul>
+        <h3>Planos Futuros</h3>
+        <ol>
+            <li>Terminar meu curso de programação</li>
+            <li>Aprimorar minhas habilidades em HTML, CSS e JavaScript</li>
+            <li>Aprender sobre frameworks de desenvolvimento web</li>
+        </ol>
+        <hr>
+        <h2>Links Importantes</h2>
+        Visiste também:<br>
+        <a href="https://www.google.com/"><i class="fa-solid fa-link"></i> Exenplo de site externo</a><br>
+        <a href="#contato"><i class="fa-solid fa-arrow-down"></i> Ir para a sessão de contato</a>
+    </div>
     <hr>
-    <h2>Links Importantes</h2>
-    <p>Visiste também:</p>
-
-    <p><a href="https://www.google.com/">Exenplo de site externo</a></p>
-    <p><a href="https://www.google.com/">Ir para a sessão de contato</a></p>
-    <hr>
-    <h2>Contato</h2>
-    <p>Para entrar em contato, envie um e-mail para <b>exemplo@dominio.com</b>.</p>
+    <div class="footer">
+        <h2 id="contato"><i class="fa-solid fa-address-book"></i> Contato</h2>
+        <p>Para entrar em contato, envie um e-mail para <b>exemplo@dominio.com</b>.</p>
+    </div>
 </body>
 </html>
