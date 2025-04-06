@@ -1,0 +1,59 @@
+{
+    "cells": [
+        {
+            "language": "markdown",
+            "source": [
+                "# Exercício de Revisão 1R: Validando nome e quantidade de aulas\r\n\r\n**Enunciado:** Peça (simulado via variável) o nome completo e a quantidade de vídeo-aulas que deseja assistir. Verifique se o nome não está vazio e se a quantidade é maior que zero; exiba uma mensagem de sucesso ou erro."
+            ],
+            "outputs": []
+        },
+        {
+            "language": "javascript",
+            "source": [
+                "const nomeCompleto = \"Nome Completo\";\r\nconst qtdVideoAulas = 10;\r\nif (nomeCompleto != \"\" && qtdVideoAulas != 0) {\r\n    console.log(\"Sucesso!\")\r\n} else {\r\n    console.log(\"Erro!\")\r\n}\r\n"
+            ],
+            "outputs": [
+                {
+                    "items": [
+                        {
+                            "mime": "application/vnd.code.notebook.stdout",
+                            "value": [
+                                "Sucesso!",
+                                "",
+                                ""
+                            ]
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "language": "markdown",
+            "source": [
+                "# Exercício de Revisão 2R: Calculando o tempo total de estudos\r\n\r\n**Enunciado:** Crie um array com o número de horas estudadas nos últimos 5 dias. Use um laço `for` para somar as horas e exiba o total no console, juntamente com uma mensagem de incentivo se o total for maior ou igual a 10."
+            ],
+            "outputs": []
+        },
+        {
+            "language": "javascript",
+            "source": [
+                "const horas_estudadas = [5, 2, 0, 3, 2];\r\nlet total_horas = 0;\r\nfor (let i = 0; i < horas_estudadas.length; i++) {\r\n    total_horas += horas_estudadas[i];\r\n}\r\nconsole.log(\"Total de horas estudadas: \", total_horas);\r\nif (total_horas > 10) {\r\n    console.log(\"Parabéns! Continue assim!\");\r\n}"
+            ],
+            "outputs": [
+                {
+                    "items": [
+                        {
+                            "mime": "application/vnd.code.notebook.stdout",
+                            "value": [
+                                "Total de horas estudadas:  12",
+                                "Parabéns! Continue assim!",
+                                "",
+                                ""
+                            ]
+                        }
+                    ]
+                }
+            ]
+        }
+    ]
+}
