@@ -1,0 +1,695 @@
+{
+    "cells": [
+        {
+            "language": "markdown",
+            "source": [
+                "### 1. (Primeiros passos no console.log)"
+            ],
+            "outputs": []
+        },
+        {
+            "language": "javascript",
+            "source": [
+                "const saudacao = \"Hello, World!\";\r\nconsole.log(saudacao)"
+            ],
+            "outputs": [
+                {
+                    "items": [
+                        {
+                            "mime": "application/vnd.code.notebook.stdout",
+                            "value": [
+                                "Hello, World!",
+                                "",
+                                ""
+                            ]
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "language": "markdown",
+            "source": [
+                "### 2. (Declaração de variáveis e tipos básicos)"
+            ],
+            "outputs": []
+        },
+        {
+            "language": "javascript",
+            "source": [
+                "const bimestre = 1;\r\nconst nota = 8.5;\r\nconst disciplina = \"Desenvolvimento Web\";\r\nconsole.log(\"Bimestre:\", bimestre, \"Nota:\", nota, \"Disciplina:\", disciplina);\r\n"
+            ],
+            "outputs": [
+                {
+                    "items": [
+                        {
+                            "mime": "application/vnd.code.notebook.stdout",
+                            "value": [
+                                "Bimestre: 1 Nota: 8.5 Disciplina: Desenvolvimento Web",
+                                "",
+                                ""
+                            ]
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "language": "markdown",
+            "source": [
+                "### 3. (Reatribuição de variáveis)"
+            ],
+            "outputs": []
+        },
+        {
+            "language": "javascript",
+            "source": [
+                "let alunos = 10;\r\nconsole.log(\"Quantidade de alunos:\", alunos);\r\nalunos = 32;\r\nconsole.log(\"Quantidade de alunos:\", alunos);"
+            ],
+            "outputs": [
+                {
+                    "items": [
+                        {
+                            "mime": "application/vnd.code.notebook.stdout",
+                            "value": [
+                                "Quantidade de alunos: 10",
+                                "Quantidade de alunos: 32",
+                                "",
+                                ""
+                            ]
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "language": "markdown",
+            "source": [
+                "### 4. (Entrada condicional simples – if)"
+            ],
+            "outputs": []
+        },
+        {
+            "language": "javascript",
+            "source": [
+                "const nota = 7;\r\nif (nota >= 7) {\r\n    console.log(\"Aprovado\");\r\n}"
+            ],
+            "outputs": [
+                {
+                    "items": [
+                        {
+                            "mime": "application/vnd.code.notebook.stdout",
+                            "value": [
+                                "Aprovado",
+                                "",
+                                ""
+                            ]
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "language": "markdown",
+            "source": [
+                "### 5. (if-else básico)"
+            ],
+            "outputs": []
+        },
+        {
+            "language": "javascript",
+            "source": [
+                "const nota = 6;\r\nif (nota >= 7) {\r\n    console.log(\"Aprovado\");\r\n} else {\r\n    console.log(\"Reprovado\");\r\n}"
+            ],
+            "outputs": [
+                {
+                    "items": [
+                        {
+                            "mime": "application/vnd.code.notebook.stdout",
+                            "value": [
+                                "Reprovado",
+                                "",
+                                ""
+                            ]
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "language": "markdown",
+            "source": [
+                "### 6. (if-elseif-else)"
+            ],
+            "outputs": []
+        },
+        {
+            "language": "javascript",
+            "source": [
+                "const nota = 3;\r\nif (nota >= 7) {\r\n    console.log(\"Aprovado\");\r\n} else if (nota >= 5 && nota < 7) {\r\n    console.log(\"Recuperação\");\r\n} else {\r\n    console.log(\"Reprovado\");\r\n}"
+            ],
+            "outputs": [
+                {
+                    "items": [
+                        {
+                            "mime": "application/vnd.code.notebook.stdout",
+                            "value": [
+                                "Reprovado",
+                                "",
+                                ""
+                            ]
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "language": "markdown",
+            "source": [
+                "### 7. (Ifs aninhados ou operador and)"
+            ],
+            "outputs": []
+        },
+        {
+            "language": "javascript",
+            "source": [
+                "const nota = 9;\r\nconst frequencia = 71;\r\nif (nota >= 7 && frequencia >= 75) {\r\n    console.log(\"Aprovado\");\r\n} else {\r\n    console.log(\"Reprovado\");\r\n}"
+            ],
+            "outputs": [
+                {
+                    "items": [
+                        {
+                            "mime": "application/vnd.code.notebook.stdout",
+                            "value": [
+                                "Reprovado",
+                                "",
+                                ""
+                            ]
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "language": "markdown",
+            "source": [
+                "### 8. (for básico)"
+            ],
+            "outputs": []
+        },
+        {
+            "language": "javascript",
+            "source": [
+                "for (let i = 1; i <= 10; i++) {\r\n    console.log(i);\r\n}"
+            ],
+            "outputs": [
+                {
+                    "items": [
+                        {
+                            "mime": "application/vnd.code.notebook.stdout",
+                            "value": [
+                                "1",
+                                "2",
+                                "3",
+                                "4",
+                                "5",
+                                "6",
+                                "7",
+                                "8",
+                                "9",
+                                "10",
+                                "",
+                                ""
+                            ]
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "language": "markdown",
+            "source": [
+                "### 9. (for com acumulador)"
+            ],
+            "outputs": []
+        },
+        {
+            "language": "javascript",
+            "source": [
+                "let soma = 0;\r\nfor (let i = 0; i <= 5; i++) {\r\n    soma += i;\r\n}\r\nconsole.log(\"A soma total é:\", soma);"
+            ],
+            "outputs": [
+                {
+                    "items": [
+                        {
+                            "mime": "application/vnd.code.notebook.stdout",
+                            "value": [
+                                "A soma total é: 15",
+                                "",
+                                ""
+                            ]
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "language": "markdown",
+            "source": [
+                "### 10. (while básico)"
+            ],
+            "outputs": []
+        },
+        {
+            "language": "javascript",
+            "source": [
+                "let i = 1;\r\nwhile (i <= 5) {\r\n    console.log(i);\r\n    i++;\r\n}"
+            ],
+            "outputs": [
+                {
+                    "items": [
+                        {
+                            "mime": "application/vnd.code.notebook.stdout",
+                            "value": [
+                                "1",
+                                "2",
+                                "3",
+                                "4",
+                                "5",
+                                "",
+                                ""
+                            ]
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "language": "markdown",
+            "source": [
+                "### 11. (while para contagem regressiva)"
+            ],
+            "outputs": []
+        },
+        {
+            "language": "javascript",
+            "source": [
+                "let i = 5;\r\nwhile (i >= 1) {\r\n    console.log(i);\r\n    i--;\r\n}\r\nconsole.log(\"Aula Iniciada!\");"
+            ],
+            "outputs": [
+                {
+                    "items": [
+                        {
+                            "mime": "application/vnd.code.notebook.stdout",
+                            "value": [
+                                "5",
+                                "4",
+                                "3",
+                                "2",
+                                "1",
+                                "Aula Iniciada!",
+                                "",
+                                ""
+                            ]
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "language": "markdown",
+            "source": [
+                "### 12. (Arrays: declaração e acesso)"
+            ],
+            "outputs": []
+        },
+        {
+            "language": "javascript",
+            "source": [
+                "const alunos = [\"Ana\", \"Bruno\", \"Carlos\", \"Daniela\", \"Eduardo\"];\r\nfor (let i = 0; i < alunos.length; i++) {\r\n    console.log(alunos[i]);\r\n}"
+            ],
+            "outputs": [
+                {
+                    "items": [
+                        {
+                            "mime": "application/vnd.code.notebook.stdout",
+                            "value": [
+                                "Ana",
+                                "Bruno",
+                                "Carlos",
+                                "Daniela",
+                                "Eduardo",
+                                "",
+                                ""
+                            ]
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "language": "markdown",
+            "source": [
+                "### 13. (Operações básicas em Arrays)"
+            ],
+            "outputs": []
+        },
+        {
+            "language": "javascript",
+            "source": [
+                "const notas = [10, 5, 7.5, 9];\r\nnotas.push (7);\r\nconsole.log(notas);\r\nnotas.pop();\r\nconsole.log(notas);"
+            ],
+            "outputs": [
+                {
+                    "items": [
+                        {
+                            "mime": "application/vnd.code.notebook.stdout",
+                            "value": [
+                                "[ 10, 5, 7.5, 9, 7 ]",
+                                "",
+                                ""
+                            ]
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "language": "markdown",
+            "source": [
+                "### 14. (Array: método filter)"
+            ],
+            "outputs": []
+        },
+        {
+            "language": "javascript",
+            "source": [
+                "const idades = [16, 15, 19, 20, 17, 18];\r\nconst maior18 = idades.filter(idade => idade >= 18);\r\nconsole.log(maior18);"
+            ],
+            "outputs": [
+                {
+                    "items": [
+                        {
+                            "mime": "application/vnd.code.notebook.stdout",
+                            "value": [
+                                "[ 19, 20, 18 ]",
+                                "",
+                                ""
+                            ]
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "language": "markdown",
+            "source": [
+                "### 15. (Array: método sort)"
+            ],
+            "outputs": []
+        },
+        {
+            "language": "javascript",
+            "source": [
+                "const nomes = ['Bruno', 'João', 'Maria', 'Ana'];\r\nnomes.sort();\r\nconsole.log(nomes);"
+            ],
+            "outputs": [
+                {
+                    "items": [
+                        {
+                            "mime": "application/vnd.code.notebook.stdout",
+                            "value": [
+                                "[ 'Ana', 'Bruno', 'João', 'Maria' ]",
+                                "",
+                                ""
+                            ]
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "language": "markdown",
+            "source": [
+                "### 16. (Array: método map)"
+            ],
+            "outputs": []
+        },
+        {
+            "language": "javascript",
+            "source": [
+                "const notas = [7, 8, 7.6, 9, 6];\r\nnotas = notas.map(nota => nota + 1);\r\nconsole.log(notas);"
+            ],
+            "outputs": [
+                {
+                    "items": [
+                        {
+                            "mime": "application/vnd.code.notebook.stdout",
+                            "value": [
+                                "[ 8, 9, 8.6, 10, 7 ]",
+                                "",
+                                ""
+                            ]
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "language": "markdown",
+            "source": [
+                "### 17. (Funções simples)"
+            ],
+            "outputs": []
+        },
+        {
+            "language": "javascript",
+            "source": [
+                "function exibirMensagem(texto) {\r\n    console.log(texto);\r\n}\r\n\r\nexibirMensagem(\"Apenas\");\r\nexibirMensagem(\"Uma\");\r\nexibirMensagem(\"Mensagem\");\r\nexibirMensagem(\"!!!\");"
+            ],
+            "outputs": [
+                {
+                    "items": [
+                        {
+                            "mime": "application/vnd.code.notebook.stdout",
+                            "value": [
+                                "Apenas",
+                                "Uma",
+                                "Mensagem",
+                                "!!!",
+                                "",
+                                ""
+                            ]
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "language": "markdown",
+            "source": [
+                "### 18. (Função com retorno)"
+            ],
+            "outputs": []
+        },
+        {
+            "language": "javascript",
+            "source": [
+                "function calcularMedia(nota1, nota2) {\r\n    return (nota1 + nota2) / 2;\r\n}\r\n\r\nconst media = calcularMedia(8, 9);\r\nconsole.log(media);"
+            ],
+            "outputs": [
+                {
+                    "items": [
+                        {
+                            "mime": "application/vnd.code.notebook.stdout",
+                            "value": [
+                                "8.5",
+                                "",
+                                ""
+                            ]
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "language": "markdown",
+            "source": [
+                "### 19. (Arrow functions)"
+            ],
+            "outputs": []
+        },
+        {
+            "language": "javascript",
+            "source": [
+                "const calcularMedia = (nota1, nota2) => (nota1 + nota2) / 2;\r\n\r\nconst media = calcularMedia(8, 9);\r\nconsole.log(media);"
+            ],
+            "outputs": [
+                {
+                    "items": [
+                        {
+                            "mime": "application/vnd.code.notebook.stdout",
+                            "value": [
+                                "8.5",
+                                "",
+                                ""
+                            ]
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "language": "markdown",
+            "source": [
+                "### 20. (Objetos JSON: formato e declaração)"
+            ],
+            "outputs": []
+        },
+        {
+            "language": "javascript",
+            "source": [
+                "const aluno = {nome: \"Pedro\", idade: 17, curso: \"IPI\"};\r\nconsole.log(aluno);"
+            ],
+            "outputs": [
+                {
+                    "items": [
+                        {
+                            "mime": "application/vnd.code.notebook.stdout",
+                            "value": [
+                                "{ nome: 'Pedro', idade: 17, curso: 'IPI' }",
+                                "",
+                                ""
+                            ]
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "language": "markdown",
+            "source": [
+                "### 21. (Acessando propriedades de um objeto)"
+            ],
+            "outputs": []
+        },
+        {
+            "language": "javascript",
+            "source": [
+                "const aluno = {nome: \"Pedro\", idade: 17, curso: \"IPI\"};\r\nconsole.log(aluno.nome);\r\nconsole.log(aluno.idade);"
+            ],
+            "outputs": [
+                {
+                    "items": [
+                        {
+                            "mime": "application/vnd.code.notebook.stdout",
+                            "value": [
+                                "Pedro",
+                                "17",
+                                "",
+                                ""
+                            ]
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "language": "markdown",
+            "source": [
+                "### 22. (Adicionando e removendo propriedades)"
+            ],
+            "outputs": []
+        },
+        {
+            "language": "javascript",
+            "source": [
+                "const aluno = {nome: \"Pedro\", idade: 17, curso: \"IPI\"};\r\n\r\nObject.defineProperty(aluno, \"nota\", {value:9, enumerable: true});\r\nconsole.log(aluno);\r\n\r\ndelete aluno.curso;\r\nconsole.log(aluno);"
+            ],
+            "outputs": [
+                {
+                    "items": [
+                        {
+                            "mime": "application/vnd.code.notebook.stdout",
+                            "value": [
+                                "{ nome: 'Pedro', idade: 17, curso: 'IPI', nota: 9 }",
+                                "{ nome: 'Pedro', idade: 17, curso: 'IPI', nota: 9 }",
+                                "",
+                                ""
+                            ]
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "language": "markdown",
+            "source": [
+                "### 23. (Convertendo objeto em JSON e vice-versa)"
+            ],
+            "outputs": []
+        },
+        {
+            "language": "javascript",
+            "source": [
+                "const aluno = {nome: \"Pedro\", idade: 17, curso: \"IPI\"};\r\n\r\nconst alunoJSON = JSON.stringify(aluno);\r\nconsole.log(alunoJSON);\r\n\r\nconst alunoObj = JSON.parse(alunoJSON);\r\nconsole.log(alunoObj);"
+            ],
+            "outputs": [
+                {
+                    "items": [
+                        {
+                            "mime": "application/vnd.code.notebook.stdout",
+                            "value": [
+                                "{\"nome\":\"Pedro\",\"idade\":17,\"curso\":\"IPI\"}",
+                                "{ nome: 'Pedro', idade: 17, curso: 'IPI' }",
+                                "",
+                                ""
+                            ]
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "language": "markdown",
+            "source": [
+                "### 24. (Prática de funções com objetos)"
+            ],
+            "outputs": []
+        },
+        {
+            "language": "javascript",
+            "source": [
+                "const aluno = {nome: \"Pedro\", nota: 8, frequencia: 77};\r\n\r\nfunction statusAluno(aluno) {\r\n    if (aluno.nota >= 7 && aluno.frequencia >= 75) {\r\n        return \"Aprovado\";\r\n    } else {\r\n        return \"Reprovado\";\r\n    }\r\n}\r\n\r\nconst resultado = statusAluno(aluno);\r\nconsole.log(resultado);\r\n"
+            ],
+            "outputs": [
+                {
+                    "items": [
+                        {
+                            "mime": "application/vnd.code.notebook.stdout",
+                            "value": [
+                                "Aprovado",
+                                "",
+                                ""
+                            ]
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "language": "markdown",
+            "source": [
+                "### 25. (Introdução a async/await)"
+            ],
+            "outputs": []
+        },
+        {
+            "language": "javascript",
+            "source": [
+                ""
+            ],
+            "outputs": []
+        }
+    ]
+}
