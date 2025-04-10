@@ -604,7 +604,7 @@
         {
             "language": "javascript",
             "source": [
-                "const aluno = {nome: \"Pedro\", idade: 17, curso: \"IPI\"};\r\n\r\nObject.defineProperty(aluno, \"nota\", {value:9, enumerable: true});\r\nconsole.log(aluno);\r\n\r\ndelete aluno.curso;\r\nconsole.log(aluno);"
+                "const aluno = {nome: \"Pedro\", idade: 17, curso: \"IPI\"};\r\n\r\naluno.nota = 9;\r\nconsole.log(aluno);\r\n\r\ndelete aluno.curso;\r\nconsole.log(aluno);"
             ],
             "outputs": [
                 {
@@ -613,7 +613,7 @@
                             "mime": "application/vnd.code.notebook.stdout",
                             "value": [
                                 "{ nome: 'Pedro', idade: 17, curso: 'IPI', nota: 9 }",
-                                "{ nome: 'Pedro', idade: 17, curso: 'IPI', nota: 9 }",
+                                "{ nome: 'Pedro', idade: 17, nota: 9 }",
                                 "",
                                 ""
                             ]
@@ -681,6 +681,240 @@
             "language": "markdown",
             "source": [
                 "### 25. (Introdução a async/await)"
+            ],
+            "outputs": []
+        },
+        {
+            "language": "javascript",
+            "source": [
+                "async function buscarDados() {\r\n    return new Promise((resolve) => {\r\n        setTimeout(() => resolve(\"Dados recebidos\"), 2000);\r\n    });\r\n}\r\n\r\nasync function exibirDados() {\r\n    const resultado = await buscarDados();\r\n    console.log(resultado);\r\n}\r\n\r\nexibirDados();\r\n\r\nconsole.log(\"Testando se o texto vai aparecer...\");"
+            ],
+            "outputs": [
+                {
+                    "items": [
+                        {
+                            "mime": "application/vnd.code.notebook.stdout",
+                            "value": [
+                                "Testando se o texto vai aparecer...",
+                                "",
+                                "Dados recebidos",
+                                ""
+                            ]
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "language": "markdown",
+            "source": [
+                "### 26. (Trabalhando com then e catch)"
+            ],
+            "outputs": []
+        },
+        {
+            "language": "javascript",
+            "source": [
+                "function buscarAlunos() {\r\n    return new Promise((resolve, reject) => {\r\n        setTimeout(() => {\r\n            const alunos = [\"Ana\", \"Bruno\"];\r\n            const resultado = true;\r\n\r\n            if (resultado) {\r\n                resolve(alunos); \r\n            } else {\r\n                reject(\"Erro ao buscar alunos\");\r\n            }\r\n\r\n        }, 2000);\r\n    });\r\n}\r\n\r\nbuscarAlunos()\r\n\r\n    .then(alunos => console.log(\"Alunos:\", alunos))\r\n    \r\n    .catch(erro => console.log(\"Erro:\", erro));"
+            ],
+            "outputs": [
+                {
+                    "items": [
+                        {
+                            "mime": "application/vnd.code.notebook.stdout",
+                            "value": [
+                                "Alunos: [ 'Ana', 'Bruno' ]",
+                                "",
+                                ""
+                            ]
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "language": "markdown",
+            "source": [
+                "### 27. (async/await com try/catch)"
+            ],
+            "outputs": []
+        },
+        {
+            "language": "javascript",
+            "source": [
+                "function buscarAlunos() {\r\n    return new Promise((resolve, reject) => {\r\n        setTimeout(() => {\r\n            const alunos = [\"Ana\", \"Bruno\"];\r\n            const resultado = true;\r\n\r\n            if (resultado) {\r\n                resolve(alunos); \r\n            } else {\r\n                reject(\"Erro ao buscar alunos\");\r\n            }\r\n\r\n        }, 2000);\r\n    });\r\n}\r\n\r\nasync function exibirAlunos() {\r\n    try {\r\n        const alunos = await buscarAlunos();\r\n        console.log(\"Alunos:\", alunos);\r\n    } catch (erro) {\r\n        console.log(\"Erro:\", erro);\r\n    }\r\n}\r\n\r\nexibirAlunos();"
+            ],
+            "outputs": [
+                {
+                    "items": [
+                        {
+                            "mime": "application/vnd.code.notebook.stdout",
+                            "value": [
+                                "Alunos: [ 'Ana', 'Bruno' ]",
+                                "",
+                                ""
+                            ]
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "language": "markdown",
+            "source": [
+                "### 28. (Simulando múltiplas promises)"
+            ],
+            "outputs": []
+        },
+        {
+            "language": "javascript",
+            "source": [
+                "async function buscarCursos() {\r\n    return new Promise(resolve => {\r\n        setTimeout(() => resolve(\"Cursos encontrados\"), 1500);\r\n    });\r\n}\r\n\r\nasync function buscarProfessores() {\r\n    return new Promise(resolve => {\r\n        setTimeout(() => resolve(\"Professores encontrados\"), 2000);\r\n    });\r\n}\r\n\r\nPromise.all([buscarCursos(), buscarProfessores()])\r\n    .then(resultados => console.log(resultados))"
+            ],
+            "outputs": [
+                {
+                    "items": [
+                        {
+                            "mime": "application/vnd.code.notebook.stdout",
+                            "value": [
+                                "[ 'Cursos encontrados', 'Professores encontrados' ]",
+                                "",
+                                ""
+                            ]
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "language": "markdown",
+            "source": [
+                "### 29. (Exercício de revisão geral: cadastro de alunos)"
+            ],
+            "outputs": []
+        },
+        {
+            "language": "javascript",
+            "source": [
+                "let alunos = [];\r\n\r\nfunction cadastrarAluno(nome, nota) {\r\n    const aluno = {nome: nome, nota: nota};\r\n    alunos.push(aluno);\r\n}\r\n\r\nfunction listarAprovados() {\r\n    const aprovados = alunos.filter(aluno => aluno.nota >= 7);\r\n    return aprovados;\r\n}\r\n\r\ncadastrarAluno(\"João\", 8);\r\ncadastrarAluno(\"José\", 6.7);\r\ncadastrarAluno(\"Pedro\", 5);\r\ncadastrarAluno(\"Maria\", 8);\r\n\r\nconsole.log(\"Alunos:\", alunos);\r\n\r\nconst aprovados = listarAprovados();\r\nconsole.log(\"Alunos aprovados:\", aprovados);"
+            ],
+            "outputs": [
+                {
+                    "items": [
+                        {
+                            "mime": "application/vnd.code.notebook.stdout",
+                            "value": [
+                                "Alunos: [",
+                                "  { nome: 'João', nota: 8 },",
+                                "  { nome: 'José', nota: 6.7 },",
+                                "  { nome: 'Pedro', nota: 5 },",
+                                "  { nome: 'Maria', nota: 8 }",
+                                "]",
+                                "Alunos aprovados: [ { nome: 'João', nota: 8 }, { nome: 'Maria', nota: 8 } ]",
+                                "",
+                                ""
+                            ]
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "language": "markdown",
+            "source": [
+                "### 30. (Operações com array de objetos)"
+            ],
+            "outputs": []
+        },
+        {
+            "language": "javascript",
+            "source": [
+                "let alunos = [];\r\n\r\nfunction cadastrarAluno(nome, nota, frequencia) {\r\n    const aluno = {nome: nome, nota: nota, frequencia: frequencia};\r\n    alunos.push(aluno);\r\n}\r\n\r\nfunction listarAprovados() {\r\n    const aprovados = alunos.filter(aluno => aluno.nota >= 7 && aluno.frequencia >= 80);\r\n    return aprovados;\r\n}\r\n\r\ncadastrarAluno(\"João\", 8, 80);\r\ncadastrarAluno(\"José\", 6.7, 90);\r\ncadastrarAluno(\"Pedro\", 5, 79);\r\ncadastrarAluno(\"Maria\", 8, 40);\r\ncadastrarAluno(\"Ana\", 7, 90);\r\n\r\nconsole.log(\"Alunos:\", alunos);\r\n\r\nconst aprovados = listarAprovados();\r\nconsole.log(\"Alunos aprovados:\", aprovados);"
+            ],
+            "outputs": [
+                {
+                    "items": [
+                        {
+                            "mime": "application/vnd.code.notebook.stdout",
+                            "value": [
+                                "Alunos: [",
+                                "  { nome: 'João', nota: 8, frequencia: 80 },",
+                                "  { nome: 'José', nota: 6.7, frequencia: 90 },",
+                                "  { nome: 'Pedro', nota: 5, frequencia: 79 },",
+                                "  { nome: 'Maria', nota: 8, frequencia: 40 },",
+                                "  { nome: 'Ana', nota: 7, frequencia: 90 }",
+                                "]",
+                                "Alunos aprovados: [",
+                                "  { nome: 'João', nota: 8, frequencia: 80 },",
+                                "  { nome: 'Ana', nota: 7, frequencia: 90 }",
+                                "]",
+                                "",
+                                ""
+                            ]
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "language": "markdown",
+            "source": [
+                "### 31. (Função que retorna outra função)"
+            ],
+            "outputs": []
+        },
+        {
+            "language": "javascript",
+            "source": [
+                "function gerarFuncaoSaudacao(nome) {\r\n    return function() {\r\n        console.log(`Olá, ${nome}!`);\r\n    };\r\n}\r\n\r\nconst saudarAna = gerarFuncaoSaudacao(\"Ana\");\r\nsaudarAna();\r\n"
+            ],
+            "outputs": [
+                {
+                    "items": [
+                        {
+                            "mime": "application/vnd.code.notebook.stdout",
+                            "value": [
+                                "Olá, Ana!",
+                                "",
+                                ""
+                            ]
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "language": "markdown",
+            "source": [
+                "### 32. (Relembrando o uso do this em objetos)"
+            ],
+            "outputs": []
+        },
+        {
+            "language": "javascript",
+            "source": [
+                "const curso = {\r\n    nome: \"Java do zero\",\r\n    descricao: \"Aprenda do Java do zero, da primeira classse até uma aplicação completa.\",\r\n\r\n    exibirDetalhes() {\r\n        console.log(`Curso: ${this.nome}`);\r\n        console.log(`Descrição: ${this.descricao}`);\r\n    }\r\n\r\n}\r\n\r\ncurso.exibirDetalhes();"
+            ],
+            "outputs": [
+                {
+                    "items": [
+                        {
+                            "mime": "application/vnd.code.notebook.stdout",
+                            "value": [
+                                "Curso: Java do zero",
+                                "Descrição: Aprenda do Java do zero, da primeira classse até uma aplicação completa.",
+                                "",
+                                ""
+                            ]
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "language": "markdown",
+            "source": [
+                "### 33. (Exercício final: simulando chamada de API e tratamento de dados)"
             ],
             "outputs": []
         },
