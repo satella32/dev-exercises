@@ -37,7 +37,7 @@
         {
             "language": "javascript",
             "source": [
-                "const bimestre = 1;\r\nconst nota = 8.5;\r\nconst disciplina = \"Desenvolvimento Web\";\r\nconsole.log(\"Bimestre:\", bimestre, \"Nota:\", nota, \"Disciplina:\", disciplina);\r\n"
+                "const bimestre = 1;\r\nconst nota = 8.5;\r\nconst disciplina = \"Desenvolvimento Web\";\r\nconsole.log(\"Bimestre:\", bimestre, \"Nota:\", nota, \"Disciplina:\", disciplina);\r\nconsole.log(\"Bimestre:\", typeof(bimestre), \"Nota:\", typeof(nota), \"Disciplina:\", typeof(disciplina));"
             ],
             "outputs": [
                 {
@@ -46,6 +46,7 @@
                             "mime": "application/vnd.code.notebook.stdout",
                             "value": [
                                 "Bimestre: 1 Nota: 8.5 Disciplina: Desenvolvimento Web",
+                                "Bimestre: number Nota: number Disciplina: string",
                                 "",
                                 ""
                             ]
@@ -921,9 +922,25 @@
         {
             "language": "javascript",
             "source": [
-                ""
+                "async function buscarCursosDaAPI() {\r\n    return new Promise((resolve, reject) => {\r\n        setTimeout(() => {\r\n            const cursos = [{nome: \"JS Básico\", duracao: 40 }, {nome: \"HTML e CSS\", duracao: 30 } ];\r\n            const resultado = true;\r\n\r\n            if (resultado) {\r\n                resolve(cursos);\r\n            } else {\r\n                reject(\"Erro ao buscar cursos\");\r\n            }\r\n\r\n        }, 2000);\r\n    });\r\n}\r\n\r\nasync function exibirCursos() {\r\n    try {\r\n        const cursos = await buscarCursosDaAPI();\r\n        console.log(\"Cursos:\", cursos);\r\n    } catch (erro) {\r\n        console.log(\"Erro:\", erro);\r\n    }\r\n}\r\n\r\nexibirCursos();\r\n"
             ],
-            "outputs": []
+            "outputs": [
+                {
+                    "items": [
+                        {
+                            "mime": "application/vnd.code.notebook.stdout",
+                            "value": [
+                                "Cursos: [",
+                                "  { nome: 'JS Básico', duracao: 40 },",
+                                "  { nome: 'HTML e CSS', duracao: 30 }",
+                                "]",
+                                "",
+                                ""
+                            ]
+                        }
+                    ]
+                }
+            ]
         }
     ]
 }
