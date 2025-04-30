@@ -770,7 +770,7 @@
         {
             "language": "javascript",
             "source": [
-                "async function buscarCursos() {\r\n    return new Promise(resolve => {\r\n        setTimeout(() => resolve(\"Cursos encontrados\"), 1500);\r\n    });\r\n}\r\n\r\nasync function buscarProfessores() {\r\n    return new Promise(resolve => {\r\n        setTimeout(() => resolve(\"Professores encontrados\"), 2000);\r\n    });\r\n}\r\n\r\nPromise.all([buscarCursos(), buscarProfessores()])\r\n    .then(resultados => console.log(resultados))"
+                "async function buscarCursos() {\r\n    return new Promise(resolve => {\r\n        const cursos = ['IPI', 'ADS', 'ADM'];\r\n        setTimeout(() => resolve(`Cursos encontrados: ${cursos}`), 1500);\r\n    });\r\n}\r\n\r\nasync function buscarProfessores() {\r\n    return new Promise(resolve => {\r\n        const professores = ['Victor', 'Delano', 'Lucas']\r\n        setTimeout(() => resolve(`Professores encontrados: ${professores}`), 2000);\r\n    });\r\n}\r\n\r\nPromise.all([buscarCursos(), buscarProfessores()])\r\n    .then(resultados => console.log(resultados));"
             ],
             "outputs": [
                 {
@@ -778,7 +778,10 @@
                         {
                             "mime": "application/vnd.code.notebook.stdout",
                             "value": [
-                                "[ 'Cursos encontrados', 'Professores encontrados' ]",
+                                "[",
+                                "  'Cursos encontrados: IPI,ADS,ADM',",
+                                "  'Professores encontrados: Victor,Delano,Lucas'",
+                                "]",
                                 "",
                                 ""
                             ]
